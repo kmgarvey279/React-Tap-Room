@@ -7,8 +7,15 @@
 
 ### _Specs_
 |Component|Concern|
-|---|---|---|
-|App|Entry point for application|Homepage|Displays an inital splash page to the user|Header|Provide user with navigation links|Keg|Defines the attributes of all kegs|KegList|Display a list of all kegs. Includes buttons allowing employees to sell pints, edit keg info, and replace kegs.|EditKegForm|Allow employees to update keg infomation|NewKegForm|Allow employees to add new kegs to the list|AboutUs|Provides additional images and information about the bar.|  
+|---|---|
+|App|Entry point for application|Homepage|Displays an inital splash page to the user|
+|Header|Provide user with navigation links|
+|Keg|Defines the attributes of all kegs|
+|KegList|Display a list of all kegs. Includes buttons allowing employees to sell pints, edit keg info, and replace kegs.|EditKegForm|Allow employees to update keg infomation|
+|NewKegForm|Allow employees to add new kegs to the list|
+|AboutUs|Provides additional images and information about the bar.| 
+
+<img src="./src/assets/images/components.png">  
 
 ### _Setup/Installation_
 
