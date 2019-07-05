@@ -11,11 +11,13 @@ function Header(){
       #navbar {
         background-color: gray;
         height: 25px;
+        text-align: center;
+        color: black;
       }
       
       img#background {
 
-        height: 200px;
+        height: 150px;
         width: 100%;
         object-fit: cover
         position: absolute;
@@ -23,15 +25,14 @@ function Header(){
       }
       
       #title {
-        position: relative;
-        z-index: 1;
+        
         text-align: center;
       }
     `}</style>
+      <div id="title"><h1>Tap Room</h1></div>
       <img id="background" src={background}/>
-      <div id="title">Tap Room</div>
       <div id="navbar">
-        <Link to="/">Home</Link> | <Link to="/keglist">Kegs on Tap</Link> | <Link to="/newkegform">Add New Keg</Link>
+        <Link to="/">Home</Link> | <Link to="/keglist">Kegs on Tap</Link> | <Link to="/newkegform">Add New Keg</Link> | <Link to="/aboutus">About Us</Link> 
       </div>
     </div>
   );
