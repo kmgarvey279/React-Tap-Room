@@ -31,7 +31,7 @@ function Header(){
       <img id="background" src={background}/>
       <div id="title">Tap Room</div>
       <div id="navbar">
-        <Link to="/">Home</Link> | <Link to="/keglist">Kegs on Tap</Link>
+        <Link to="/">Home</Link> | <Link to="/keglist">Kegs on Tap</Link> | <Link to="/newkegform">Add New Keg</Link>
       </div>
     </div>
   );
