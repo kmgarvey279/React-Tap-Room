@@ -6,11 +6,11 @@ function Keg(props) {
     <div>
       <style jsx>{`
     `}</style>
-      <h2>{props.name}</h2>
-      <h4>{props.brand}</h4>
-      <h4>{props.price}</h4>
-      <h4>{props.alcoholLvl}</h4>
-      <h4>{props.remainingTaps}</h4>
+      <h2>Name:{props.name}</h2>
+      <h4>Brand:{props.brand}</h4>
+      <h4>Price:{props.price}</h4>
+      <h4>Alcohol Content:{props.alcoholLvl}</h4>
+      <h4>Remaining Taps:{props.remainingTaps}</h4>
     </div>  
   );
 }

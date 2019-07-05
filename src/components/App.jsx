@@ -10,8 +10,8 @@ function App(){
     <div>
       <Header/>
       <Switch>
-        <Route exact parth='/' component={Home} />
-        <Route path='/keglist' component={KegList} />
+        <Route exact path='/' component={Home} />
+        <Route exact path='/keglist' component={KegList} />
         <Route component={Error404} />
       </Switch>
     </div>
