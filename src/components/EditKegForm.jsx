@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewKegForm(){
+function EditKegForm(){
   return (
     <div>
       <form>
@@ -24,11 +24,8 @@ function NewKegForm(){
           type='number'
           id='remainingTaps'
           placeholder='Remaining Taps' />
-          
         <button type='submit'>Add Keg</button>
       </form>
     </div>  
   );
 }
-
-export default NewKegForm;

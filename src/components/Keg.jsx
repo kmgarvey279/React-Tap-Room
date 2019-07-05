@@ -11,6 +11,8 @@ function Keg(props) {
       <h4>Price:{props.price}</h4>
       <h4>Alcohol Content:{props.alcoholLvl}</h4>
       <h4>Remaining Taps:{props.remainingTaps}</h4>
+      <button type="button">Sell Pint</button>
+      <button type="button">Edit Pint Information</button>
     </div>  
   );
 }
