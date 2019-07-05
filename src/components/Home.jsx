@@ -6,6 +6,7 @@ function Home(){
       <style jsx>{`
 
       `}</style>
+      <h1>Home</h1>
     </div>
   );
 }

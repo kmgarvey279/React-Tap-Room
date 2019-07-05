@@ -3,7 +3,7 @@ import React from 'react';
 import Header from './Header';
 import Home from './Home';
 import KegList from './KegList';
-import Error404 from './Error'
+import Error404 from './Error404';
 
 function App(){
   return (
@@ -11,8 +11,8 @@ function App(){
       <Header/>
       <Switch>
         <Route exact parth='/' component={Home} />
-        <Route component={Error404} />
         <Route path='/keglist' component={KegList} />
+        <Route component={Error404} />
       </Switch>
     </div>
   );

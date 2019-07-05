@@ -27,7 +27,7 @@ var masterKegList = [
 
 function KegList() {
   return (
-    <div id="outer">
+    <div>
       <style jsx>{`
     `}</style>
       {masterKegList.map((keg, index) =>
@@ -41,3 +41,5 @@ function KegList() {
     </div>
   );
 }
+
+export default KegList;
