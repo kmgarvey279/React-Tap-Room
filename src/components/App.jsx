@@ -6,7 +6,7 @@ import KegList from './KegList';
 import Error404 from './Error404';
 import NewKegForm from './NewKegForm';
 import AboutUs from './AboutUs';
-
+import Employees from './Admin';
 import { v4 } from 'uuid';
 
 class App extends React.Component {
