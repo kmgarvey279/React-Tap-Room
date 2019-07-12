@@ -2,6 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function EditKegForm(props){
+  let _name = null;
+  let _brand = null;
+  let _price = null;
+  let _alcohol = null;
+  
+  function handleKegEditSubmission(event) {
+    event.preventDefault();
+    props.onKegEdit({name: _name.value, brand: _brand.value, price: _price.value, alcoholLvl = _alcohol.value});
+  }
   return (
     <div>
       <form onSubmit={handleKegEditSubmission}>
