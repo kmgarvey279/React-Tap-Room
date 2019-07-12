@@ -6,7 +6,7 @@ import KegList from './KegList';
 import Error404 from './Error404';
 import NewKegForm from './NewKegForm';
 import AboutUs from './AboutUs';
-import Employees from './Admin';
+import Employees from './Employees';
 import { v4 } from 'uuid';
 
 class App extends React.Component {
@@ -66,25 +66,34 @@ class App extends React.Component {
       },
       selectedKeg: null
     };
+    this.handleAddingNewKeg = this.handleAddingNewKeg.bind(this);
+    this.handleChangingSelectedKeg = this.handleChangingSelectedKeg.bind(this);
+  }
+  
+  handleChangingSelectedKeg(kegId){
+    this.setState({selectedKeg: kegId});
   }
 
   render() {
     return (
       <div>
-      <style jsx>{`
+        <style jsx>{`
         div {
           background-color: black;
           color: white;
         }
-    `}</style>
+      `}</style>
         <Header/>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/keglist' component={KegList} />
+          <Route exact path='/keglist' render={()=><NewKegControl onNewKegCreation={this.handleAddingNewKeg}} />}/>
           <Route exact path='/newkegform' component={NewKegForm} />
+          <Route path='/employees' render={(props)=><Employees kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}
+            onKegSelection={this.handleChangingSelectedKeg}
+            selectedTicket={this.state.selectedKeg}/>} />
           <Route exact path='/aboutus' component={AboutUs} />
           <Route component={Error404} />
-        </Switch>
+          </Switch>
       </div>
     );
   }
