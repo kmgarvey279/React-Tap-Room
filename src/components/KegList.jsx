@@ -31,9 +31,7 @@ function KegList(props) {
     `}</style>
       {Object.keys(props.kegList).map(function(kegId) {
         var keg = props.kegList[kegId];
-        return
-        <div id="inner">
-          <Keg name={keg.name}
+        return <div id="inner"><Keg name={keg.name}
             brand={keg.brand}
             price={keg.price}
             alcoholLvl={keg.alcoholLvl}
@@ -41,8 +39,8 @@ function KegList(props) {
             currentRouterPath={props.currentRouterPath}
             key={kegId}
             kegId={kegId}
-            onKegSelection={props.onKegSelection}/>;
-        </div>    
+            onKegSelection={props.onKegSelection}/>
+            </div>;  
       })}
     </div>
   );
