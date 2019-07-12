@@ -39,7 +39,10 @@ function KegList(props) {
             currentRouterPath={props.currentRouterPath}
             key={kegId}
             kegId={kegId}
-            onKegSelection={props.onKegSelection}/>
+            onKegSelection={props.onKegSelection}
+            onSellPintClick={props.onSellPintClick}
+            onSellGrowlerClick={props.onSellGrowlerClick}
+            onSellLargeGrowlerClick={props.onSellLargeGrowlerClick}/>
           </div>;  
       })}
     </div>
@@ -49,7 +52,10 @@ function KegList(props) {
 KegList.propTypes = {
   kegList: PropTypes.object,
   currentRouterPath: PropTypes.string,
-  onKegSelection: PropTypes.func
+  onKegSelection: PropTypes.func,
+  onSellPintClick: PropTypes.func,
+  onSellGrowlerClick: PropTypes.func,
+  onSellLargeGrowlerClick: PropTypes.func
 };
 
 export default KegList;

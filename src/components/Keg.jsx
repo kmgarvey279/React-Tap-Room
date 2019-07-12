@@ -20,7 +20,9 @@ function Keg(props) {
       `}</style>  
         {kegInfo}    
         <h4>Remaining Taps: {props.remainingTaps}/124</h4>
-        <button type="button">Sell Pint</button> 
+        <button type="button" onClick={() => {props.onSellPintClick(props.kegId);}}>Sell Pint</button>
+        <button type="button" onClick={() => {props.onSellGrowlerClick(props.kegId);}}>Sell Growler (2 pints)</button>
+        <button type="button" onClick={() => {props.onSellLargeGrowlerClick(props.kegId);}}>Sell Large Growler (4 pints)</button> 
       </div>  
     );
   } else {
@@ -38,8 +40,11 @@ Keg.propTypes = {
   price: PropTypes.number.isRequired,
   alcoholLvl: PropTypes.number.isRequired,
   remainingTaps: PropTypes.number.isRequired,
-  currentRouterPath: PropTypes.string,
-  onKegSelection: PropTypes.func,
+  currentRouterPath: PropTypes.string.isRequired,
+  onKegSelection: PropTypes.func.isRequired,
+  onSellPintClick: PropTypes.func.isRequired,
+  onSellGrowlerClick: PropTypes.func.isRequired,
+  onSellLargeGrowlerClick: PropTypes.func.isRequired,
   kegId: PropTypes.string.isRequired
 };
 

@@ -18,6 +18,9 @@ function Employees(props){
       <KegList
         kegList={props.kegList}
         currentRouterPath={props.currentRouterPath}
+        onSellPintClick={props.onSellPintClick}
+        onSellGrowlerClick={props.onSellGrowlerClick}
+        onSellLargeGrowlerClick={props.onSellLargeGrowlerClick}
         onKegSelection={props.onKegSelection}/>
       <NewKegForm
         onNewKegCreation={props.onNewKegCreation}/>
@@ -31,6 +34,9 @@ Employees.propTypes = {
   onKegSelection: PropTypes.func.isRequired,
   onNewKegCreation: PropTypes.func.isRequired,
   onKegEdit: PropTypes.func.isRequired,
+  onSellPintClick: PropTypes.func.isRequired,
+  onSellGrowlerClick: PropTypes.func.isRequired,
+  onSellLargeGrowlerClick: PropTypes.func.isRequired,
   selectedKeg: PropTypes.string,
   selectedKegId: PropTypes.string
 };

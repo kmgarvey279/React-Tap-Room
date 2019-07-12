@@ -70,6 +70,9 @@ class App extends React.Component {
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
     this.handleChangingSelectedKeg = this.handleChangingSelectedKeg.bind(this);
     this.handleUpdatingKeg = this.handleUpdatingKeg.bind(this);
+    this.handleSellPint = this.handleSellPint(this);
+    this.handleSellGrowler = this.handleSellGrowler(this);
+    this.handleSellLargeGrowler = this.handleSellLargeGrowler(this);
   }
   
   handleAddingNewKegToList(newKeg){
@@ -91,6 +94,19 @@ class App extends React.Component {
   handleChangingSelectedKeg(kegId){
     this.setState({selectedKeg: kegId, selectedKegId: kegId});
   }
+  
+  handleSellPint(id) {
+    var newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[id].remainingTaps-= 1;
+  }
+  handleSellGrowler(id) {
+    var newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[id].remainingTaps-= 2;
+  }
+  handleSellLargeGrowler(id) {
+    var newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[id].remainingTaps-= 4;
+  }
 
   render() {
     return (
@@ -111,7 +127,10 @@ class App extends React.Component {
             onKegEdit={this.handleUpdatingKeg}
             onKegSelection={this.handleChangingSelectedKeg} 
             selectedKeg={this.state.selectedKeg}
-            selectedKegId={this.state.selectedKegId}/>} />
+            selectedKegId={this.state.selectedKegId}
+            onSellPintClick={(id) => this.handleSellPint(id)}
+            onSellGrowlerClick={(id) => this.handleSellGrowler(id)}
+            onSellLargeGrowlerClick={(id) => this.handleSellLargeGrowler(id)}/>} />
           <Route exact path='/aboutus' component={AboutUs} />
           <Route component={Error404} />
         </Switch>
