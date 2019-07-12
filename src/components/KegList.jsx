@@ -40,7 +40,7 @@ function KegList(props) {
             key={kegId}
             kegId={kegId}
             onKegSelection={props.onKegSelection}/>
-            </div>;  
+          </div>;  
       })}
     </div>
   );

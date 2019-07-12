@@ -7,33 +7,34 @@ function EditKegForm(props){
   let _price = null;
   let _alcohol = null;
   
-  function handleKegEditSubmission(event) {
+  function handleKegEditFormSubmission(event) {
     event.preventDefault();
-    props.onKegEdit({name: _name.value, brand: _brand.value, price: _price.value, alcoholLvl: _alcohol.value});
+    props.onKegEdit({name: _name.value, brand: _brand.value, price: _price.value, alcoholLvl: _alcohol.value, remainingTaps: 124, kegId: props.selectedKeg.kegId});
   }
+  
   return (
     <div>
-    <h3>Edit Keg</h3>
-      <form onSubmit={handleKegEditSubmission}>
+    <h3>Edit {props.selectedKeg.name} Keg</h3>
+      <form onSubmit={handleKegEditFormSubmission}>
         <input
           type='text'
           id='name'
-          placeholder='Name' 
+          placeholder={props.selectedKeg.name} 
           ref={(input) => {_name = input;}}/>
         <input
           type='text'
           id='brand'
-          placeholder='Brand' 
+          placeholder={props.selectedKeg.brand} 
           ref={(input) => {_brand = input;}}/>
         <input
           type='number'
           id='price'
-          placeholder='Price'
+          placeholder={props.selectedKeg.price}
           ref={(input) => {_price = input;}}/>
         <input
           type='number'
           id='alcoholLvl'
-          placeholder='Alcohol Content'
+          placeholder={props.selectedKeg.alcoholLvl}
           ref={(input) => {_alcohol = input;}}/>
         <button type='submit'>Edit Keg</button>
       </form>
@@ -46,4 +47,4 @@ EditKegForm.propTypes = {
   onKegEdit: PropTypes.func
 };
 
-export default EditKegForm
+export default EditKegForm;

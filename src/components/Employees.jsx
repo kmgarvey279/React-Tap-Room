@@ -5,14 +5,14 @@ import EditKegForm from './EditKegForm';
 import NewKegForm from './NewKegForm';
 
 function Employees(props){
-  let optionalEditKegComponent = null;
+  let optionalEditKegContent = null;
   if (props.selectedKeg !=null){
-    optionalEditKegComponent = <EditKegForm selectedKeg={props.kegList[props.selectedKeg]}/>;
+    optionalEditKegContent = <EditKegForm onKegEdit={props.onKegEdit} selectedKeg={props.kegList[props.selectedKeg]}/>;
   }
   return (
     <div>
       <h2>Employee Functions</h2>
-      {optionalEditKegComponent}
+      {optionalEditKegContent}
       <KegList
         kegList={props.kegList}
         currentRouterPath={props.currentRouterPath}
@@ -28,6 +28,7 @@ Employees.propTypes = {
   currentRouterPath: PropTypes.string.isRequired,
   onKegSelection: PropTypes.func.isRequired,
   onNewKegCreation: PropTypes.func.isRequired,
+  onKegEdit: PropTypes.func.isRequired,
   selectedKeg: PropTypes.string
 };
 

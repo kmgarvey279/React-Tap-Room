@@ -68,6 +68,7 @@ class App extends React.Component {
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
     this.handleChangingSelectedKeg = this.handleChangingSelectedKeg.bind(this);
+    this.handleUpdatingKeg = this.handleUpdatingKeg.bind(this);
   }
   
   handleAddingNewKegToList(newKeg){
@@ -78,10 +79,12 @@ class App extends React.Component {
     this.setState({masterKegList: newMasterKegList});
   }
   
-  updateKeg(selectedKeg){
-    var id = selectedKeg.kegId;  
+  handleUpdatingKeg(updatedKeg){ 
     var newMasterKegList = Object.assign({}, this.state.masterKegList);
-    newMasterKegList[id] = selectedKeg;
+    var updatedKegId = updatedKeg.kegId;
+    alert(newMasterKegList[updatedKegId]);
+    newMasterKegList[updatedKegId] = updatedKeg;
+    this.setState({masterKegList: newMasterKegList});
   }
   
   handleChangingSelectedKeg(kegId){
@@ -103,9 +106,9 @@ class App extends React.Component {
           <Route exact path='/keglist' render={()=><KegList kegList={this.state.masterKegList} />} />
           <Route exact path='/employees' render={(props)=><Employees kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}
             onNewKegCreation={this.handleAddingNewKegToList}  
+            onKegEdit={this.handleUpdatingKeg}
             onKegSelection={this.handleChangingSelectedKeg} 
-            selectedTicket={this.state.selectedKeg}
-            onKegEdit={this.updateKeg}/>} />
+            selectedKeg={this.state.selectedKeg}/>} />
           <Route exact path='/aboutus' component={AboutUs} />
           <Route component={Error404} />
         </Switch>
