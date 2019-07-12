@@ -101,7 +101,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/keglist' render={()=><KegList kegList={this.state.masterKegList} />} />
-          <Route path='/employees' render={(props)=><Employees kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}
+          <Route exact path='/employees' render={(props)=><Employees kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}
             onKegSelection={this.handleChangingSelectedKeg} 
             selectedTicket={this.state.selectedKeg}
             onKegEdit={this.updateKeg}/>} />

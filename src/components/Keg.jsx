@@ -12,7 +12,7 @@ function Keg(props) {
     </div>
   if (props.currentRouterPath === '/employees'){
     return (
-      <div onClick{()=> {props.onKegSelection(props.kegId);}}>
+      <div onClick={() => {props.onKegSelection(props.kegId);}}>
         <style jsx>{`
           div {
           }
@@ -23,9 +23,11 @@ function Keg(props) {
       </div>  
     );
   } else {
-    <div>
-      {kegInfo}
-    </div>  
+    return (
+      <div>
+        {kegInfo}
+      </div> 
+    ); 
   }
 }
 

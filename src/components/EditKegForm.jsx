@@ -9,10 +9,11 @@ function EditKegForm(props){
   
   function handleKegEditSubmission(event) {
     event.preventDefault();
-    props.onKegEdit({name: _name.value, brand: _brand.value, price: _price.value, alcoholLvl = _alcohol.value});
+    props.onKegEdit({name: _name.value, brand: _brand.value, price: _price.value, alcoholLvl: _alcohol.value});
   }
   return (
     <div>
+    <h3>Edit Keg</h3>
       <form onSubmit={handleKegEditSubmission}>
         <input
           type='text'
@@ -41,7 +42,8 @@ function EditKegForm(props){
 }
 
 EditKegForm.propTypes = {
-  selectedKeg: PropTypes.object
+  selectedKeg: PropTypes.object,
+  onKegEdit: PropTypes.func
 };
 
 export default EditKegForm
