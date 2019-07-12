@@ -9,7 +9,7 @@ function EditKegForm(props){
   
   function handleKegEditFormSubmission(event) {
     event.preventDefault();
-    props.onKegEdit({name: _name.value, brand: _brand.value, price: _price.value, alcoholLvl: _alcohol.value, remainingTaps: 124, kegId: props.selectedKeg.kegId});
+    props.onKegEdit({name: _name.value, brand: _brand.value, price: _price.value, alcoholLvl: _alcohol.value, remainingTaps: 124, kegId: props.selectedKegId});
   }
   
   return (
@@ -43,8 +43,9 @@ function EditKegForm(props){
 }
 
 EditKegForm.propTypes = {
-  selectedKeg: PropTypes.object,
-  onKegEdit: PropTypes.func
+  selectedKeg: PropTypes.object.isRequired,
+  onKegEdit: PropTypes.func.isRequired,
+  kegId: PropTypes.string.isRequired
 };
 
 export default EditKegForm;

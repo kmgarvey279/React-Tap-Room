@@ -7,7 +7,9 @@ import NewKegForm from './NewKegForm';
 function Employees(props){
   let optionalEditKegContent = null;
   if (props.selectedKeg !=null){
-    optionalEditKegContent = <EditKegForm onKegEdit={props.onKegEdit} selectedKeg={props.kegList[props.selectedKeg]}/>;
+    optionalEditKegContent = <EditKegForm onKegEdit={props.onKegEdit} 
+                              selectedKegId={props.selectedKegId} 
+                              selectedKeg={props.kegList[props.selectedKeg]}/>;
   }
   return (
     <div>
@@ -29,7 +31,8 @@ Employees.propTypes = {
   onKegSelection: PropTypes.func.isRequired,
   onNewKegCreation: PropTypes.func.isRequired,
   onKegEdit: PropTypes.func.isRequired,
-  selectedKeg: PropTypes.string
+  selectedKeg: PropTypes.string,
+  selectedKegId: PropTypes.string
 };
 
 export default Employees;

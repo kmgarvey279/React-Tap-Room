@@ -9,6 +9,7 @@ function Keg(props) {
       <h4>By {props.brand}</h4>
       <h4>Price: ${props.price}</h4>
       <h4>Alcohol Content: {props.alcoholLvl}%</h4>
+      <p>{props.kegId}</p>
     </div>;
   if (props.currentRouterPath === '/employees'){
     return (
