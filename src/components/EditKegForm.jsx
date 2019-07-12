@@ -1,31 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function EditKegForm(){
+function EditKegForm(props){
   return (
     <div>
-      <form>
+      <form onSubmit={handleKegEditSubmission}>
         <input
           type='text'
           id='name'
-          placeholder='Name' />
+          placeholder='Name' 
+          ref={(input) => {_name = input;}}/>
         <input
           type='text'
           id='brand'
-          placeholder='Brand' />
+          placeholder='Brand' 
+          ref={(input) => {_brand = input;}}/>
         <input
           type='number'
           id='price'
-          placeholder='Price' />
+          placeholder='Price'
+          ref={(input) => {_price = input;}}/>
         <input
           type='number'
           id='alcoholLvl'
-          placeholder='Alcohol Content' />
-        <input
-          type='number'
-          id='remainingTaps'
-          placeholder='Remaining Taps' />
-        <button type='submit'>Add Keg</button>
+          placeholder='Alcohol Content'
+          ref={(input) => {_alcohol = input;}}/>
+        <button type='submit'>Edit Keg</button>
       </form>
     </div>  
   );
 }
+
+EditKegForm.propTypes = {
+  selectedKeg: PropTypes.object
+};
+
+export default EditKegForm
