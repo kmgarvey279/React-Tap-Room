@@ -1,6 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
 import React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 import Home from './Home';
 import KegList from './KegList';
 import Error404 from './Error404';
@@ -70,9 +71,10 @@ class App extends React.Component {
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
     this.handleChangingSelectedKeg = this.handleChangingSelectedKeg.bind(this);
     this.handleUpdatingKeg = this.handleUpdatingKeg.bind(this);
-    this.handleSellPint = this.handleSellPint(this);
-    this.handleSellGrowler = this.handleSellGrowler(this);
-    this.handleSellLargeGrowler = this.handleSellLargeGrowler(this);
+    this.handleSellPint = this.handleSellPint.bind(this);
+    this.handleSellGrowler = this.handleSellGrowler.bind(this);
+    this.handleSellLargeGrowler = this.handleSellLargeGrowler.bind(this);
+    this.handleReplaceKeg = this.handleReplaceKeg.bind(this);
   }
   
   handleAddingNewKegToList(newKeg){
@@ -107,6 +109,10 @@ class App extends React.Component {
     var newMasterKegList = Object.assign({}, this.state.masterKegList);
     newMasterKegList[id].remainingTaps-= 4;
   }
+  handleReplaceKeg(id) {
+    var newMasterKegList = Object.assign({}, this.state.masterKegList);
+    newMasterKegList[id].remainingTaps = 124;
+  }
 
   render() {
     return (
@@ -130,14 +136,14 @@ class App extends React.Component {
             selectedKegId={this.state.selectedKegId}
             onSellPintClick={(id) => this.handleSellPint(id)}
             onSellGrowlerClick={(id) => this.handleSellGrowler(id)}
-            onSellLargeGrowlerClick={(id) => this.handleSellLargeGrowler(id)}/>} />
+            onSellLargeGrowlerClick={(id) => this.handleSellLargeGrowler(id)}
+            onReplaceClick={(id) => this.handleReplaceKeg(id)}/>} />
           <Route exact path='/aboutus' component={AboutUs} />
           <Route component={Error404} />
         </Switch>
+        <Footer/>
       </div>
     );
   }
-
 }
-
 export default App;

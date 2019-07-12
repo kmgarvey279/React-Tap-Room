@@ -13,7 +13,14 @@ function Employees(props){
   }
   return (
     <div>
+    <style jsx>{`
+      div {
+        text-align: center;
+      }
+    `}</style>
       <h2>Employee Functions</h2>
+      <NewKegForm
+        onNewKegCreation={props.onNewKegCreation}/>
       {optionalEditKegContent}
       <KegList
         kegList={props.kegList}
@@ -21,9 +28,8 @@ function Employees(props){
         onSellPintClick={props.onSellPintClick}
         onSellGrowlerClick={props.onSellGrowlerClick}
         onSellLargeGrowlerClick={props.onSellLargeGrowlerClick}
-        onKegSelection={props.onKegSelection}/>
-      <NewKegForm
-        onNewKegCreation={props.onNewKegCreation}/>
+        onKegSelection={props.onKegSelection}
+        onReplaceClick={props.onReplaceClick}/>
     </div>
   );
 }
@@ -37,6 +43,7 @@ Employees.propTypes = {
   onSellPintClick: PropTypes.func.isRequired,
   onSellGrowlerClick: PropTypes.func.isRequired,
   onSellLargeGrowlerClick: PropTypes.func.isRequired,
+  onReplaceClick: PropTypes.func.isRequired,
   selectedKeg: PropTypes.string,
   selectedKegId: PropTypes.string
 };

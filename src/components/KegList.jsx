@@ -17,12 +17,10 @@ function KegList(props) {
         
         div#inner {
           break-inside: avoid-column;
-          min-height: 300px;
           border: solid darkred 3px;
           margin-bottom: 10px;
           text-align: center;
         }
-        
         #bubbles {
           object-fit: cover;
           z-index: 0;
@@ -42,7 +40,8 @@ function KegList(props) {
             onKegSelection={props.onKegSelection}
             onSellPintClick={props.onSellPintClick}
             onSellGrowlerClick={props.onSellGrowlerClick}
-            onSellLargeGrowlerClick={props.onSellLargeGrowlerClick}/>
+            onSellLargeGrowlerClick={props.onSellLargeGrowlerClick}
+            onReplaceClick={props.onReplaceClick}/>
           </div>;  
       })}
     </div>
@@ -55,7 +54,8 @@ KegList.propTypes = {
   onKegSelection: PropTypes.func,
   onSellPintClick: PropTypes.func,
   onSellGrowlerClick: PropTypes.func,
-  onSellLargeGrowlerClick: PropTypes.func
+  onSellLargeGrowlerClick: PropTypes.func,
+  onReplaceClick: PropTypes.func
 };
 
 export default KegList;

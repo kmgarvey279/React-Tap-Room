@@ -9,7 +9,6 @@ function Keg(props) {
       <h4>By {props.brand}</h4>
       <h4>Price: ${props.price}</h4>
       <h4>Alcohol Content: {props.alcoholLvl}%</h4>
-      <p>{props.kegId}</p>
     </div>;
   if (props.currentRouterPath === '/employees'){
     return (
@@ -23,7 +22,8 @@ function Keg(props) {
         <button type="button" onClick={() => {props.onSellPintClick(props.kegId);}}>Sell Pint</button>
         <button type="button" onClick={() => {props.onSellGrowlerClick(props.kegId);}}>Sell Growler (2 pints)</button>
         <button type="button" onClick={() => {props.onSellLargeGrowlerClick(props.kegId);}}>Sell Large Growler (4 pints)</button> 
-      </div>  
+        <button type="button" onClick={() => {props.onReplaceClick(props.kegId);}}>Replace Keg</button>
+        </div>  
     );
   } else {
     return (
@@ -45,6 +45,7 @@ Keg.propTypes = {
   onSellPintClick: PropTypes.func.isRequired,
   onSellGrowlerClick: PropTypes.func.isRequired,
   onSellLargeGrowlerClick: PropTypes.func.isRequired,
+  onReplaceClick: PropTypes.func.isRequired,
   kegId: PropTypes.string.isRequired
 };
 

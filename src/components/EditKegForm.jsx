@@ -9,7 +9,6 @@ function EditKegForm(props){
   
   function handleKegEditFormSubmission(event) {
     event.preventDefault();
-    console.log(_name.value == '')
     if(_name.value == ''){
       _name.value = props.selectedKeg.name;
     }
