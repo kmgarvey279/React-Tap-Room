@@ -3,17 +3,21 @@
 ### _***Kevin Garvey***_
 
 ### _Description:_
-##### _A website for a bar which includes a list of all beers on tap, infomation about the bar itself, and employee functions such as the ability to sell drinks and add new kegs to the tap list. 07/5/2019_
+##### _A website for a bar which includes a list of all beers on tap, information about the bar itself, and employee functions such as the ability to sell drinks and add new kegs to the tap list. 07/12/2019_
 
 ### _Specs_
 |Component|Concern|
 |---|---|
-|App|Entry point for application|Homepage|Displays an inital splash page to the user|
+|App|Entry point for application|
+|Homepage|Displays an inital splash page to the user|
 |Header|Provide user with navigation links|
+|Footer|Style the bottom of the page|
 |Keg|Defines the attributes of all kegs|
-|KegList|Display a list of all kegs. Includes buttons allowing employees to sell pints, edit keg info, and replace kegs.|EditKegForm|Allow employees to update keg infomation|
+|KegList|Display a list of all kegs. Includes buttons allowing employees to sell pints, edit keg info, and replace kegs.|
+|EditKegForm|Allow employees to update keg infomation|
 |NewKegForm|Allow employees to add new kegs to the list|
-|AboutUs|Provides additional images and information about the bar.| 
+|AboutUs|Provides additional images and information about the bar.|
+|Employees|Displays KegList and NewKegForm. Pints, growlers, and large growlers can be sold from each keg. Kegs can also be replaced with a separate button. Finally, clicking on a keg will display the KegEditForm for that keg.
 
 <img src="./src/assets/images/components.png">  
 
